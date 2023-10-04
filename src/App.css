@@ -16,15 +16,24 @@ body {
   color: #fff;
   width: 100%;
   min-height: 100vh;
+  padding: 25px;
 }
+
+.countries-heading,
+.visited-heading {
+  font: bold normal 30px Roboto;
+  padding-left: 25px;
+  padding-bottom: 7px;
+}
+
 .country-container {
   border: 1px solid #94a3b8;
   border-radius: 15px;
   padding: 0px;
-  margin: 20px;
+  margin: 20px 50px 20px 25px;
   margin-bottom: 10px;
   overflow-y: scroll;
-  height: 50%;
+  height: 350px;
 }
 
 .county-line {
@@ -33,10 +42,11 @@ body {
   justify-content: space-between;
   padding: 3px;
   border: 1px solid #94a3b8;
-  background-color: #1f1f2f ;
+  background-color: #1f1f2f;
   padding: 5px;
   padding-left: 25px;
 }
+
 .country-name {
   font-weight: bold;
 }
@@ -49,20 +59,64 @@ body {
   padding: 10px;
   margin: 12px;
   cursor: pointer;
-  margin-right: 10px;
-  width: 65px;
+  margin-right: 30px;
+  width: 75px;
   height: 35px;
 }
 
-.remove-button {
-  background-color: #f44336;
-  color: white;
+.visited-button {
+  background-color: transparent;
+  color: #cbd5e1;
   border: none;
+  font: 15px Roboto;
+  padding: 10px;
+  margin: 12px;
+  cursor: pointer;
+  margin-right: 30px;
+  width: 75px;
+  height: 35px;
+}
+
+.flag-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 25px;
+}
+
+.flag-card {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.flag-image {
+  width: 450px;
+  height: 250px;
+}
+
+.name-with-remove-button {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1f1f2f;
+  width: 450px;
+  height: 50px;
+  padding-left: 20px;
+}
+.remove-button {
+  background-color: #1f1f2f;
+  border: 1px solid #94a3b8;
+  border-radius: 5px;
+  color: white;
   padding: 5px 10px;
   cursor: pointer;
+  margin: 10px;
 }
 
 .no-visited-countries {
-  font-style: italic;
-  color: #888;
+  font: 400 20px Roboto;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 120px;
 }
