@@ -98,46 +98,50 @@ const App = () => {
     <div className="bg-container">
       <h1 className="countries-heading">Countries</h1>
       <div className="country-container">
-        {countries.map(country => (
-          <div className="county-line" key={country.id}>
-            <p className="country-name">{country.name}</p>
-            {country.isVisited ? (
-              <p className="visited-button">Visited</p>
-            ) : (
-              <button
-                className="visit-button"
-                type="button"
-                onClick={() => handleVisit(country.id)}
-              >
-                Visit
-              </button>
-            )}
-          </div>
-        ))}
+        <ul>
+          {countries.map(country => (
+            <li className="county-line" key={country.id}>
+              <p className="country-name">{country.name}</p>
+              {country.isVisited ? (
+                <p className="visited-button">Visited</p>
+              ) : (
+                <button
+                  className="visit-button"
+                  type="button"
+                  onClick={() => handleVisit(country.id)}
+                >
+                  Visit
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <h1 className="visited-heading">Visited Countries</h1>
       <div className="flag-container">
         {visitedCountries.length > 0 ? (
-          visitedCountries.map(country => (
-            <div className="flag-card" key={country.id}>
-              <img
-                className="flag-image"
-                src={country.imageUrl}
-                alt="thumbnail"
-              />
-              <div className="name-with-remove-button">
-                <p>{country.name}</p>
-                <button
-                  className="remove-button"
-                  type="button"
-                  onClick={() => handleRemove(country.id)}
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
-          ))
+          <ul>
+            {visitedCountries.map(country => (
+              <li className="flag-card" key={country.id}>
+                <img
+                  className="flag-image"
+                  src={country.imageUrl}
+                  alt="thumbnail"
+                />
+                <div className="name-with-remove-button">
+                  <p>{country.name}</p>
+                  <button
+                    className="remove-button"
+                    type="button"
+                    onClick={() => handleRemove(country.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
         ) : (
           <div className="no-visited-countries">
             <p>No Countries Visited Yet!</p>
